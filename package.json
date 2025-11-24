@@ -1,0 +1,38 @@
+{
+  "name": "slot-machine-2019-week05",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "### Goal: Build a Simple Slot Machine",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "serve": "http-server -p 5173 -c-1 ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BSG6/slot-machine-2019-week05.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BSG6/slot-machine-2019-week05/issues"
+  },
+  "homepage": "https://github.com/BSG6/slot-machine-2019-week05#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "@playwright/test": "^1.56.1",
+    "@vitest/coverage-v8": "^4.0.4",
+    "eslint": "^9.38.0",
+    "globals": "^16.4.0",
+    "http-server": "^14.1.1",
+    "prettier": "^3.6.2",
+    "vitest": "^4.0.4"
+  }
+}

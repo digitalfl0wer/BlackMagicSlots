@@ -1,0 +1,40 @@
+:root{
+  --bg-obsidian:#0B0B0C; 
+  --bg-espresso:#1A1411; 
+  --text:#EDE7E1;
+  --gold-classic:#D4AF37; 
+  --gold-rich:#B88A2B; 
+  --gold-antique:#A0772B; 
+  --gold-rose:#E6B7A9;
+  --accent-emerald:#0F6D4E; 
+  --accent-indigo:#1A265E; 
+  --accent-oxblood:#5E1F2A;
+}
+
+html,body{
+  margin:0; padding:0; background:var(--bg-obsidian); color:var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+}
+
+h1{
+  color: var(--gold-classic);
+  text-align:center;
+}
+
+.outerMain{ display:flex; justify-content:center; }
+main{ max-width: 960px; padding: 16px; }
+
+.deposit button{
+  background: transparent; border: 2px solid var(--gold-antique); border-radius: 8px; padding: 6px; margin-right: 8px;
+}
+
+.resetSpin button{
+  background: var(--accent-emerald); color: var(--text); border: 0; border-radius: 8px; padding: 8px 12px; margin-right: 8px;
+}
+
+.reels{ display:flex; gap:12px; justify-content:center; margin:16px 0; }
+.reels img{ width: 120px; height: 120px; object-fit: contain; background: var(--bg-espresso); border: 1px solid var(--gold-antique); border-radius: 8px; }
+
+.display, .win{ text-align:center; }
+
+

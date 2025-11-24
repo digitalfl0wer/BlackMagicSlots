@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/slotmachine.css">
+    <title>Brie's Slots</title>
+</head>
+<body>
+    <section class="outerMain">
+        <main>
+            <div class="page-header">
+                <div class="page-header__content">
+                    <h1>Black Magic Reels</h1>
+                    <p class="subtitle">Afro-chic luxe spins with ritual flair.</p>
+                    <div id="react-root"></div>
+                </div>
+                <button type="button" class="settings-trigger" aria-haspopup="dialog" aria-label="Open settings dialog">
+                    <span class="sr-only">Open settings</span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                    <span class="burger-bar"></span>
+                </button>
+            </div>
+
+            <section class="reels-wrapper">
+                <section class="reels" aria-live="polite" aria-label="Slot machine reels">
+                    <div class="reel-column" data-reel="0">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="0-0">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="0-1">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="0-2">
+                    </div>
+                    <div class="reel-column" data-reel="1">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="1-0">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="1-1">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="1-2">
+                    </div>
+                    <div class="reel-column" data-reel="2">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="2-0">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="2-1">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="2-2">
+                    </div>
+                    <div class="reel-column" data-reel="3">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="3-0">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="3-1">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="3-2">
+                    </div>
+                    <div class="reel-column" data-reel="4">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="4-0">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="4-1">
+                        <img src="/questionmark.png" alt="Mystery symbol" data-cell="4-2">
+                    </div>
+                </section>
+                <div class="payline-overlay" aria-hidden="true">
+                    <svg viewBox="0 0 100 100" preserveAspectRatio="none" role="presentation"></svg>
+                </div>
+            </section>
+            <section class="stats-ribbon" aria-label="Ritual stats">
+                <div class="stat">
+                    <span class="stat-label">Spins</span>
+                    <strong data-stat="spins">0</strong>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Hit Rate</span>
+                    <strong data-stat="hitRate">0%</strong>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Streak</span>
+                    <strong data-stat="streak">0</strong>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Biggest Win</span>
+                    <strong data-stat="bigWin">$0</strong>
+                </div>
+            </section>
+            <section class="bet-controls" aria-label="Bet controls">
+                <div class="bet-group">
+                    <h2 class="group-title">Lines</h2>
+                    <div class="option-row" role="group" aria-label="Select number of lines">
+                        <button type="button" class="option option--lines" data-lines="1" aria-pressed="true">1</button>
+                        <button type="button" class="option option--lines" data-lines="9" aria-pressed="false">9</button>
+                        <button type="button" class="option option--lines" data-lines="20" aria-pressed="false">20</button>
+                        <button type="button" class="option option--lines" data-lines="25" aria-pressed="false">25</button>
+                    </div>
+                </div>
+                <div class="bet-group">
+                    <h2 class="group-title">Bet / Line</h2>
+                    <div class="option-row" role="group" aria-label="Select bet per line">
+                        <button type="button" class="option option--bet" data-bet="1" aria-pressed="true">$1</button>
+                        <button type="button" class="option option--bet" data-bet="2" aria-pressed="false">$2</button>
+                        <button type="button" class="option option--bet" data-bet="5" aria-pressed="false">$5</button>
+                    </div>
+                </div>
+                <p class="bet-total" aria-live="polite">Total Bet: $1</p>
+                <div class="resetSpin">
+                    <button class="reset">reset</button>
+                    <button class="spin" aria-live="polite">spin</button>
+                </div>
+            </section>
+            <section class="display">
+                <p class="balance"> Starting Balance : $1000</p>
+            </section>
+            <section class="win">
+                <p class="winner" aria-live="polite" aria-atomic="true"></p>
+                <p class="line-callout" aria-live="polite"></p>
+            </section>
+            <img src="" alt="" class="image">
+            <div id="confetti-overlay" aria-hidden="true">
+                <canvas></canvas>
+            </div>
+        </main>
+        <div class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title" aria-describedby="settings-description" hidden>
+            <div class="settings-modal__panel">
+                <header class="settings-modal__header">
+                    <div>
+                        <p class="settings-modal__label" id="settings-description">Mute audio, control volume, reduce animation, or switch to a high-contrast view.</p>
+                        <h3 class="settings-modal__title" id="settings-title">Experience Settings</h3>
+                    </div>
+                    <button type="button" class="settings-modal__close" data-action="close-settings" aria-label="Close settings dialog">&times;</button>
+                </header>
+                <section class="settings-section" aria-label="Audio controls">
+                    <p class="settings-section__title">Audio</p>
+                    <label class="settings-control settings-control--toggle">
+                        <span>Mute audio</span>
+                        <input type="checkbox" class="settings-input" id="setting-mute">
+                        <span class="settings-control__slider" aria-hidden="true"></span>
+                    </label>
+                    <label class="settings-control settings-control--range">
+                        <span>
+                            Volume
+                            <output id="setting-volume-value" class="settings-output" aria-live="polite">75%</output>
+                        </span>
+                        <input type="range" class="settings-input" id="setting-volume" min="0" max="100" step="1">
+                    </label>
+                </section>
+                <section class="settings-section" aria-label="Accessibility controls">
+                    <p class="settings-section__title">Accessibility</p>
+                    <label class="settings-control settings-control--toggle">
+                        <span>Reduced motion</span>
+                        <input type="checkbox" class="settings-input" id="setting-reduced-motion">
+                        <span class="settings-control__slider" aria-hidden="true"></span>
+                    </label>
+                    <label class="settings-control settings-control--toggle">
+                        <span>High contrast</span>
+                        <input type="checkbox" class="settings-input" id="setting-high-contrast">
+                        <span class="settings-control__slider" aria-hidden="true"></span>
+                    </label>
+                </section>
+                <footer class="settings-modal__footer">
+                    <button type="button" class="settings-modal__close-button" data-action="close-settings">Close</button>
+                </footer>
+            </div>
+        </div>
+        
+    </section>
+    
+    <script type="module" src="/js/wire.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+
+</body>
+</html>
